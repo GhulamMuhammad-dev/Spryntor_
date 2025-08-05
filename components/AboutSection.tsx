@@ -29,7 +29,7 @@ export default function AboutSection() {
           <div className="flex justify-center mb-4">
             <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-blue-600">
               <Image
-                src="/images/profile.jpg" // Replace with your profile image path
+                src="/images/logoProfile.png" // Replace with your profile image path
                 alt="Spryntor Avatar"
                 width={96}
                 height={96}
