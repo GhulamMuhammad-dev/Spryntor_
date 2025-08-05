@@ -26,7 +26,7 @@ export default function Navbar() {
 
     {/* Contact Button */}
     <div className="hidden md:block">
-      <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4">Contact</Button>
+      <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4"> <Link href='#contact'>Contact</Link></Button>
     </div>
 
     {/* Mobile Toggle */}
