@@ -14,14 +14,11 @@ const app = () => {
   return (
     <div>
       <Hero />
-      <TrustedBySection />
       <WhatIDoSection />
-      {/* <AboutSection /> */}
-      {/* <ServicesSection /> */}
       <WorkSection/>
       <ResultsSection />
       <CTABanner />
-      {/* <ContactForm /> */}
+    
       
     </div>
   )

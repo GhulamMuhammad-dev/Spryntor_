@@ -3,11 +3,36 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center bg-[#0E0E10] text-white px-6">
-      <div className="max-w-5xl text-center">
+    <section className="relative flex min-h-screen items-center justify-center  text-white px-6 overflow-hidden">
+      {/* Pattern Background */}
+      <div className="absolute inset-0 -z-20  top-0 left-0 w-full h-full">
+        <Image
+          src="/images/sprytorUI/dotPattren.png" // your dotted grid image
+          alt="Background pattern"
+          fill
+          priority
+          className="opacity-70"
+        />
+      </div>
+
+      {/* Gradient / Wave Layer */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] max-w-none -z-10 flex items-center justify-center">
+        <Image
+          src="/images/sprytorUI/circularGradient.png" // your blue arcs/gradient layer
+          alt="Gradient background"
+          width={1000}
+          height={10}
+          priority
+          
+        />
+      </div>
+
+      {/* Content */}
+      <div className="max-w-5xl text-center relative z-10">
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -15,10 +40,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
           className="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight"
         >
-          <span className="bg-gradient-to-r from-[#3F8CFF] to-[#001FEB] bg-clip-text text-transparent">
-            Frontend
-          </span>{" "}
-          that Moves Products Forward.
+          Frontend that Moves Products Forward.
         </motion.h1>
 
         {/* Subheadline */}
@@ -33,31 +55,16 @@ export default function HeroSection() {
           frontend development.
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
           className="mt-10 flex flex-wrap justify-center gap-4"
         >
-          <Link href="/contact">
-            <Button
-              className="px-6 py-6 text-lg font-semibold rounded-xl"
-              style={{
-                background:
-                  "linear-gradient(90deg, #3F8CFF 0%, #001FEB 100%)",
-              }}
-            >
-              Work With Me →
-            </Button>
-          </Link>
-
           <Link href="/work">
-            <Button
-              variant="outline"
-              className="px-6 py-6 text-lg font-semibold rounded-xl border-[#3F8CFF] text-[#3F8CFF] hover:bg-[#3F8CFF] hover:text-white transition"
-            >
-              See My Work →
+            <Button className="px-6 py-6 text-lg font-semibold rounded-xl bg-white text-black hover:bg-[#3F8CFF] hover:text-white transition">
+              Our Work
             </Button>
           </Link>
         </motion.div>
